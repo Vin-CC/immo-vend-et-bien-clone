@@ -1,0 +1,135 @@
+.section {
+  position: relative;
+  min-height: 600px;
+  padding: 100px 0;
+  background-image: url('https://www.immovendetbien.com/wp-content/uploads/2024/05/trouver_un_conceiller_1.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at bottom right, rgba(255,255,255,0) 48%, rgba(255,255,255,1) 72%);
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rightCol {
+  width: 55%;
+  background: rgba(255,255,255,0.95);
+  padding: 48px;
+  border-radius: 8px;
+}
+
+.title {
+  font-family: 'arista-pro', 'Roboto', sans-serif;
+  font-size: 36px;
+  color: var(--color-dark);
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 20px;
+  color: var(--color-gray);
+  margin-bottom: 32px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  background: white;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.lottieStep {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-family: 'arista-pro', 'Roboto', sans-serif;
+  font-size: 20px;
+  color: var(--color-dark);
+  margin: 0 0 6px;
+}
+
+.stepText {
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 15px;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.arrowWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  opacity: 0;
+}
+
+.arrowWrapper.visible {
+  opacity: 1;
+  animation: fadeInDown 0.6s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.arrowSvg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-orange);
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    justify-content: center;
+  }
+
+  .rightCol {
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .rightCol {
+    width: 100%;
+    padding: 28px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}

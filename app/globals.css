@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://use.typekit.net/frr5tat.css');
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #54595F;
+  --color-text: #7A7A7A;
+  --color-accent: #FFFFFF;
+  --color-orange: #DE6539;
+  --color-teal: #5D8D96;
+  --color-dark: #58595B;
+  --color-white: #FFFFFF;
+  --color-gray: #7A7A7A;
+  --container-max-width: 1140px;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'effra', 'Roboto', sans-serif;
+}
+
+p {
+  margin-block-end: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.e-con-boxed {
+  width: 100%;
+}
+
+.e-con-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.btn-orange {
+  background-color: var(--color-orange);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.btn-orange:hover {
+  opacity: 0.9;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-dark {
+  background-color: var(--color-dark);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.btn-dark:hover {
+  opacity: 0.9;
+  color: white;
+  text-decoration: none;
+}
