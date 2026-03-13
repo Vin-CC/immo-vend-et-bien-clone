@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  z-index: 1;
   min-height: 90vh;
   background-image: url('https://www.immovendetbien.com/wp-content/uploads/2024/05/Vend-bien.jpg');
   background-size: cover;
@@ -74,13 +75,16 @@
 .iframeWrapper {
   width: 100%;
   min-height: 600px;
+  overflow: visible;
 }
 
 .iframeWrapper iframe {
   width: 100%;
   height: 1237px;
+  max-height: none;
   border: none;
   border-radius: 3px;
+  display: block;
 }
 
 .trustMobile {

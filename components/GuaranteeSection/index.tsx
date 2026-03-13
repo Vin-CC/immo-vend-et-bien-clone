@@ -22,7 +22,7 @@ export default function GuaranteeSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     if (lottieRef.current) observer.observe(lottieRef.current);
     return () => {

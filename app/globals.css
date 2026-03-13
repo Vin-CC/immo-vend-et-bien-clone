@@ -1,5 +1,61 @@
+/* Google Fonts - Roboto (fallback) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://use.typekit.net/frr5tat.css');
+
+/* effra — fichiers directs Typekit (bypasse la restriction domaine du kit CSS) */
+@font-face {
+  font-family: 'effra';
+  src: url("https://use.typekit.net/af/2dce9d/00000000000000003b9b489b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
+       url("https://use.typekit.net/af/2dce9d/00000000000000003b9b489b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'effra';
+  src: url("https://use.typekit.net/af/23ddd7/00000000000000003b9b489e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),
+       url("https://use.typekit.net/af/23ddd7/00000000000000003b9b489e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'effra';
+  src: url("https://use.typekit.net/af/206d7a/00000000000000003b9b489d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),
+       url("https://use.typekit.net/af/206d7a/00000000000000003b9b489d/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: normal;
+}
+
+/* arista-pro — CDNFonts trial version (non-commercial) */
+@font-face {
+  font-family: 'arista-pro';
+  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Regular-trial.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'arista-pro';
+  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Alternate-SemiBold-trial.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'arista-pro';
+  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Alternate-Bold-trial.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
 
 :root {
   --color-primary: #000000;

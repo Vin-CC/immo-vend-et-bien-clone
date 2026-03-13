@@ -1,8 +1,8 @@
 .section {
   background-color: var(--color-orange);
-  padding: 100px 0 60px;
+  padding: 100px 0 180px;
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .inner {
@@ -52,20 +52,20 @@
 
 .decoRight {
   position: absolute;
-  right: -200px;
-  bottom: 0;
-  height: 600px;
-  margin-bottom: -120px;
+  right: -120px;
+  bottom: -60px;
+  height: 550px;
   z-index: 1;
+  pointer-events: none;
 }
 
 .decoLeft {
   position: absolute;
-  left: -200px;
-  bottom: 0;
-  height: 600px;
-  margin-bottom: -66px;
+  left: -120px;
+  bottom: -60px;
+  height: 550px;
   z-index: 1;
+  pointer-events: none;
 }
 
 @media (max-width: 1024px) {

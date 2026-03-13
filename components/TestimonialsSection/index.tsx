@@ -5,12 +5,15 @@ import styles from './TestimonialsSection.module.css';
 
 export default function TestimonialsSection() {
   useEffect(() => {
+    const container = document.getElementById('trustindex-testimonials');
+    if (!container) return;
+    // Avoid loading twice
+    if (container.querySelector('script')) return;
     const script = document.createElement('script');
     script.src = 'https://cdn.trustindex.io/loader.js?71afdad303093508a086ca123cd';
     script.defer = true;
     script.async = true;
-    const container = document.getElementById('trustindex-testimonials');
-    if (container) container.appendChild(script);
+    container.appendChild(script);
   }, []);
 
   return (

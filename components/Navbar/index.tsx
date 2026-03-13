@@ -5,12 +5,15 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   useEffect(() => {
+    const container = document.getElementById('trustindex-navbar');
+    if (!container) return;
+    // Avoid loading twice
+    if (container.querySelector('script')) return;
     const script = document.createElement('script');
     script.src = 'https://cdn.trustindex.io/loader.js?ba912c75057c420761467bbcd77';
     script.defer = true;
     script.async = true;
-    const container = document.getElementById('trustindex-navbar');
-    if (container) container.appendChild(script);
+    container.appendChild(script);
   }, []);
 
   return (
