@@ -15,9 +15,9 @@ export default function Footer() {
           <a href="https://tribup.fr/" target="_blank" rel="noopener noreferrer">Trib&apos;up</a>
         </p>
         <nav className={styles.links}>
-          <a href="#">Honoraires</a>
-          <a href="#">Mentions légales</a>
-          <a href="#">Politique de confidentialité</a>
+          <a href="https://www.immovendetbien.com/honoraires/" target="_blank" rel="noopener noreferrer">Honoraires</a>
+          <a href="https://www.immovendetbien.com/mentions-legales/" target="_blank" rel="noopener noreferrer">Mentions légales</a>
+          <a href="https://www.immovendetbien.com/declaration-de-confidentialite-ue/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
         </nav>
       </div>
     </footer>

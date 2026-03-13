@@ -12,12 +12,13 @@ export default function MethodSection() {
               <span className={styles.badge}>Étape 1</span>
               <h3 className={styles.blockTitle}>Estimation fiable</h3>
               <p className={styles.blockText}>
-                Nos 3 estimations complémentaires vous assurent une évaluation précise et réaliste de votre bien :
+                Nos 3 estimations complémentaires permettent de révéler tout le potentiel de votre bien et d&apos;en optimiser la valeur.
               </p>
+              <p className={styles.blockText}>3 estimations qui valorisent votre bien.</p>
               <ul className={styles.blockList}>
-                <li>Structurelle</li>
-                <li>Marché</li>
-                <li>Concurrentielle</li>
+                <li><strong>Structurelle</strong> : pour déceler la valeur unique de votre bien</li>
+                <li><strong>Marché</strong> : pour élaborer une stratégie d&apos;acquisition acquéreurs</li>
+                <li><strong>Concurrentielle</strong> : pour réaliser une vente rapide au meilleur prix</li>
               </ul>
             </div>
             <div
@@ -31,8 +32,9 @@ export default function MethodSection() {
             <div className={`${styles.textCol} ${styles.textColRight}`}>
               <span className={styles.badge}>Étape 2</span>
               <h3 className={styles.blockTitle}>Stratégie digitale optimale</h3>
+              <p className={styles.blockText}>Vendez plus vite, avec plus de visibilité !</p>
               <p className={styles.blockText}>
-                Vendez plus vite, avec plus de visibilité ! Notre stratégie digitale multi-canaux maximise l&apos;exposition de votre bien et attire les meilleurs acquéreurs.
+                Grâce à notre stratégie digitale avancée, offrez à votre bien une visibilité maximale et attirez des acquéreurs ciblés, avant même la mise en ligne de votre annonce.
               </p>
             </div>
             <div
@@ -46,9 +48,11 @@ export default function MethodSection() {
             <div className={`${styles.textCol} ${styles.textColLeft}`}>
               <span className={styles.badge}>Étape 3</span>
               <h3 className={styles.blockTitle}>Votre projet, notre priorité absolue !</h3>
-              <p className={styles.blockText}>
-                Votre projet, guidé par notre engagement. Disponible 7j/7, nous vous accompagnons à chaque étape pour une vente sereine et réussie.
-              </p>
+              <p className={styles.blockText}>Votre projet, guidé par notre engagement.</p>
+              <ul className={styles.blockList}>
+                <li>Disponible 7j/7, de 8h à 20h, 365 jours par an.</li>
+                <li>Estimation en 48h.</li>
+              </ul>
             </div>
             <div
               className={styles.imageCol}

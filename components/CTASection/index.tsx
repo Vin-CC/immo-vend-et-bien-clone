@@ -41,15 +41,14 @@ export default function CTASection() {
       />
       <div className={styles.inner}>
         <h2 className={styles.title}>
-          Nous vendons votre bien dans <strong>les 30 prochains jours</strong>, au <strong>prix convenu.</strong>
+          Nous vendons votre bien dans{' '}
+          <span style={{color: '#DE6539'}}>les 30 prochains jours</span>, au{' '}
+          <span style={{color: '#DE6539'}}>prix convenu.</span>
         </h2>
         <p className={styles.subtitle}>
           Sinon, jusqu&apos;à <strong>100% des honoraires offerts</strong>.
         </p>
         <div className={styles.lottieWrapper} ref={lottieRef}></div>
-        <a href="#header-form" className={styles.btn}>
-          Je vérifie l&apos;éligibilité de mon bien
-        </a>
       </div>
       <img
         src="https://www.immovendetbien.com/wp-content/uploads/2025/07/Sebastien-2dd-889x1024.png"

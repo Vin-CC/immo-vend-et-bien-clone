@@ -73,12 +73,12 @@
 
 .iframeWrapper {
   width: 100%;
-  min-height: 400px;
+  min-height: 600px;
 }
 
 .iframeWrapper iframe {
   width: 100%;
-  min-height: 400px;
+  height: 1237px;
   border: none;
   border-radius: 3px;
 }

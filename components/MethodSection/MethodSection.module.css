@@ -81,27 +81,16 @@
 }
 
 .blockList {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding-left: 20px;
+  margin: 8px 0 0;
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 16px;
+  color: var(--color-dark);
+  line-height: 1.8;
 }
 
 .blockList li {
-  font-family: 'effra', 'Roboto', sans-serif;
-  font-size: 16px;
-  color: var(--color-gray);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.blockList li::before {
-  content: '→';
-  color: var(--color-orange);
-  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .imageCol {

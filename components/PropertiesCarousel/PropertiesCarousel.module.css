@@ -65,6 +65,13 @@
   justify-content: center;
 }
 
+.infoIcon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .infoBit {
   display: flex;
   align-items: center;
