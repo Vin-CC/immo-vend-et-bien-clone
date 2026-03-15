@@ -97,8 +97,12 @@ export default function HowItWorksSection() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.bgImage}></div>
-      <div className={styles.overlay}></div>
+      <img
+        src="https://www.immovendetbien.com/wp-content/uploads/2024/05/trouver_un_conceiller_1.jpg"
+        alt=""
+        className={styles.bgImageEl}
+        aria-hidden="true"
+      />
       <div className={styles.inner}>
         <div className={styles.rightCol}>
           <h2 className={styles.title}>Comment ça marche ?</h2>
