@@ -16,10 +16,11 @@ const stats: StatItem[] = [
 ];
 
 function useCounter(target: number, started: boolean) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     if (!started) return;
+    setValue(0);
     let start = 0;
     const duration = 1500;
     const step = Math.ceil(target / (duration / 16));
