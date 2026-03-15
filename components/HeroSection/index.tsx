@@ -19,11 +19,11 @@ export default function HeroSection() {
       <div className={styles.inner}>
         <div className={styles.tag}>Reims &amp; Épernay</div>
         <h1 className={styles.h1}>
-          Estimez et Vendez votre bien<br />
-          <span>rapidement</span> et au meilleur prix
+          Nous vendons votre bien<br />
+          <span>en 30 jours</span> et <span>au prix convenu</span>
         </h1>
         <p className={styles.subtitle}>
-          Évaluation offerte et <strong>sans engagement</strong>
+          Sinon jusqu&apos;à <strong>100% des honoraires offerts</strong>
         </p>
         <div className={styles.formCard}>
           <iframe

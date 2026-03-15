@@ -10,6 +10,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import PropertiesCarousel from '@/components/PropertiesCarousel';
 import CTASection from '@/components/CTASection';
 import EligibilitySection from '@/components/EligibilitySection';
+import FAQSection from '@/components/FAQSection';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
 import Footer from '@/components/Footer';
 
@@ -28,6 +29,7 @@ export default function Home() {
       <PropertiesCarousel />
       <CTASection />
       <EligibilitySection />
+      <FAQSection />
       <StickyMobileCTA />
       <Footer />
     </main>
