@@ -4,15 +4,25 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/original.html',
+        destination: 'https://www.immovendetbien.com/principale-2/',
+      },
+      {
+        source: '/wp-content/:path*',
+        destination: 'https://www.immovendetbien.com/wp-content/:path*',
+      },
+      {
+        source: '/wp-includes/:path*',
+        destination: 'https://www.immovendetbien.com/wp-includes/:path*',
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: 'https://www.immovendetbien.com/wp-admin/:path*',
       },
     ];
   },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.immovendetbien.com' },
-      { protocol: 'https', hostname: 'lottie.host' },
-      { protocol: 'https', hostname: 'fonts.cdnfonts.com' },
     ],
   },
 };
