@@ -65,10 +65,14 @@ export default function HeroSection() {
                   className={styles.videoCover}
                 />
                 <div className={styles.videoOverlay}>
-                  <svg className={styles.playIcon} viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.4)" />
-                    <polygon points="26,20 50,32 26,44" fill="white" />
-                  </svg>
+                  <div className={styles.playBtn}>
+                    <div className={styles.playCircle}>
+                      <svg className={styles.playIcon} viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="5,3 19,12 5,21" fill="white" />
+                      </svg>
+                    </div>
+                    <span className={styles.playLabel}>Cliquez pour découvrir</span>
+                  </div>
                 </div>
               </>
             )}

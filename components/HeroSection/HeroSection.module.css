@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.15);
   border-radius: 8px;
   transition: opacity 0.3s;
 }
@@ -129,9 +129,43 @@
   pointer-events: none;
 }
 
+.playBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.playCircle {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(222,101,57,0.5);
+  transition: transform 0.2s ease;
+}
+
+.playCircle:hover {
+  transform: scale(1.05);
+}
+
 .playIcon {
-  width: 48px;
-  height: 48px;
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+}
+
+.playLabel {
+  font-family: 'effra', 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .video {
