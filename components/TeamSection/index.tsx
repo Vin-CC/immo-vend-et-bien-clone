@@ -1,15 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './TeamSection.module.css';
-
-const agents = [
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/01/Amina-881x1024.jpeg', name: 'Amina' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB22.png', name: 'Alessia' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2024/07/VeroWEB.jpg', name: 'Véronique' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png', name: 'Sébastien' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/08/Maeve-4gg-12-768x1024.png', name: 'Maeve' },
-];
 
 export default function TeamSection() {
   const [playing, setPlaying] = useState(false);
@@ -23,8 +15,18 @@ export default function TeamSection() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        {/* Bouton découvrir / vidéo */}
-        <div className={styles.videoWrap} onClick={handlePlay}>
+        {/* Logo + texte agence */}
+        <img
+          src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
+          alt="Vend & Bien"
+          className={styles.logo}
+        />
+        <p className={styles.text}>
+          Bien plus qu&apos;une agence, nous combinons <strong>expertise immobilière et innovation digitale</strong>, pour vous accompagner avec succès.
+        </p>
+
+        {/* Vidéo / bouton découvrir */}
+        <div className={styles.videoWrap} onClick={!playing ? handlePlay : undefined}>
           {!playing && (
             <>
               <img
@@ -34,7 +36,7 @@ export default function TeamSection() {
               />
               <div className={styles.playOverlay}>
                 <div className={styles.playCircle}>
-                  <svg viewBox="0 0 24 24" fill="white" width="32" height="32">
+                  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
                     <polygon points="5,3 19,12 5,21" />
                   </svg>
                 </div>
@@ -50,15 +52,9 @@ export default function TeamSection() {
           />
         </div>
 
-        {/* Portraits ronds */}
-        <div className={styles.portraits}>
-          {agents.map((agent) => (
-            <div key={agent.name} className={styles.portrait}>
-              <img src={agent.photo} alt={agent.name} className={styles.portraitImg} />
-              <span className={styles.portraitName}>{agent.name}</span>
-            </div>
-          ))}
-        </div>
+        <a href="#header-form" className={styles.btn}>
+          Je vérifie l&apos;éligibilité de mon bien
+        </a>
       </div>
     </section>
   );

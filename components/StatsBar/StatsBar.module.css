@@ -27,7 +27,7 @@
 
 .statValue {
   font-family: 'arista-pro', 'Roboto', sans-serif;
-  font-size: 42px;
+  font-size: 28px;
   color: var(--color-orange);
   font-weight: 700;
   display: block;
@@ -36,10 +36,10 @@
 
 .statLabel {
   font-family: 'effra', 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
-  color: var(--color-dark);
-  margin-top: 6px;
+  color: var(--color-gray);
+  margin-top: 4px;
   display: block;
   letter-spacing: 0.5px;
 }

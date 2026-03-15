@@ -43,8 +43,7 @@ export default function PropertiesCarousel() {
             breakpoints={{
               0: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
-              1025: { slidesPerView: 3 },
-              1280: { slidesPerView: 4 },
+              1025: { slidesPerView: 2 },
             }}
           >
             {slides.map((slide, i) => (
