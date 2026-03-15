@@ -18,8 +18,8 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <StatsBar />
       <TeamSection />
+      <StatsBar />
       <ComparisonSection />
       <GuaranteeSection />
       <MethodSection />

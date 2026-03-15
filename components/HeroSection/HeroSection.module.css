@@ -1,60 +1,54 @@
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 90vh;
+  min-height: 80vh;
   background-image: url('https://www.immovendetbien.com/wp-content/uploads/2024/05/Vend-bien.jpg');
   background-size: cover;
   background-position: center;
-  padding: 200px 200px 100px;
+  padding: 180px 20px 100px;
   overflow: hidden;
+  text-align: center;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.82);
   z-index: 0;
 }
 
 .inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1140px;
+  max-width: 800px;
   margin: 0 auto;
-  width: 100%;
-}
-
-.leftCol {
-  flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .tag {
   font-family: 'effra', 'Roboto', sans-serif;
-  font-size: 35px;
+  font-size: 28px;
   text-transform: uppercase;
   background-color: var(--color-orange);
   color: white;
   display: inline-block;
-  padding: 8px 18px;
-  margin-bottom: 24px;
-  animation: fadeInLeft 0.8s ease forwards;
+  padding: 6px 18px;
+  animation: fadeInDown 0.6s ease forwards;
 }
 
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-60px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .h1 {
   font-family: 'arista-pro', 'Roboto', sans-serif;
   font-size: 48px;
   color: var(--color-dark);
-  margin: 0 0 16px;
+  margin: 0;
   line-height: 1.2;
 }
 
@@ -66,131 +60,24 @@
   font-family: 'effra', 'Roboto', sans-serif;
   font-size: 20px;
   color: var(--color-dark);
-  margin-bottom: 32px;
+  margin: 0;
 }
 
-.subtitle strong {
-  font-weight: 700;
-}
-
-.iframeWrapper {
+.formCard {
   width: 100%;
-  min-height: 600px;
-  overflow: visible;
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  overflow: hidden;
+  margin-top: 8px;
 }
 
-.iframeWrapper iframe {
+.formIframe {
   width: 100%;
   height: 1237px;
-  max-height: none;
   border: none;
-  border-radius: 3px;
   display: block;
-}
-
-.trustMobile {
-  display: none;
-  margin-top: 16px;
-}
-
-.rightCol {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.videoWrapper {
-  position: relative;
-  cursor: pointer;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.videoCover {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
-.videoOverlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.15);
-  border-radius: 8px;
-  transition: opacity 0.3s;
-}
-
-.videoOverlay.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.playBtn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.playCircle {
-  width: 80px;
-  height: 80px;
-  background-color: var(--color-orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(222,101,57,0.5);
-  transition: transform 0.2s ease;
-}
-
-.playCircle:hover {
-  transform: scale(1.05);
-}
-
-.playIcon {
-  width: 28px;
-  height: 28px;
-  margin-left: 4px;
-}
-
-.playLabel {
-  font-family: 'effra', 'Roboto', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.video {
-  width: 100%;
-  display: none;
-  border-radius: 8px;
-}
-
-.video.active {
-  display: block;
-}
-
-@media (max-width: 1024px) {
-  .hero {
-    padding: 160px 60px 80px;
-  }
-
-  .inner {
-    flex-direction: column;
-  }
-
-  .rightCol {
-    display: block;
-  }
 }
 
 @media (max-width: 767px) {
@@ -198,28 +85,15 @@
     padding: 120px 20px 60px;
   }
 
-  .inner {
-    flex-direction: column;
-    gap: 32px;
+  .h1 {
+    font-size: 30px;
   }
 
   .tag {
-    font-size: 22px;
-  }
-
-  .h1 {
-    font-size: 32px;
+    font-size: 18px;
   }
 
   .subtitle {
-    font-size: 17px;
-  }
-
-  .trustMobile {
-    display: block;
-  }
-
-  .rightCol {
-    display: none;
+    font-size: 16px;
   }
 }

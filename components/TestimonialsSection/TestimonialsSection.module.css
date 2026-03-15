@@ -1,5 +1,5 @@
 .section {
-  background-color: white;
+  background-color: var(--color-orange);
   padding: 100px 0;
   text-align: center;
 }
@@ -13,14 +13,14 @@
 .title {
   font-family: 'arista-pro', 'Roboto', sans-serif;
   font-size: 36px;
-  color: var(--color-dark);
+  color: white;
   margin: 0 0 16px;
 }
 
 .subtitle {
   font-family: 'effra', 'Roboto', sans-serif;
   font-size: 20px;
-  color: var(--color-gray);
+  color: white;
   margin-bottom: 40px;
 }
 
@@ -30,8 +30,8 @@
 
 .btn {
   display: inline-block;
-  background-color: var(--color-orange);
-  color: white;
+  background-color: white;
+  color: var(--color-orange);
   border: 2px solid white;
   padding: 14px 28px;
   font-family: 'effra', 'Roboto', sans-serif;
