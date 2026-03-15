@@ -42,10 +42,10 @@ function StatCounter({ stat, started }: { stat: StatItem; started: boolean }) {
   const value = useCounter(stat.target, started);
   return (
     <div className={styles.stat}>
-      <span className={styles.statLabel}>{stat.label}</span>
       <span className={styles.statValue}>
         {value}{stat.suffix}
       </span>
+      <span className={styles.statLabel}>{stat.label}</span>
     </div>
   );
 }

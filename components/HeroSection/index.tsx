@@ -40,7 +40,7 @@ export default function HeroSection() {
         <div className={styles.leftCol}>
           <div className={styles.tag}>Reims &amp; Epernay</div>
           <h1 className={styles.h1}>
-            Nous vendons votre bien<br />
+            Nous vendrons votre bien<br />
             <span>en 30 jours</span> et <span>au prix convenu</span>
           </h1>
           <p className={styles.subtitle}>

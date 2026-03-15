@@ -41,7 +41,7 @@ export default function CTASection() {
       />
       <div className={styles.inner}>
         <h2 className={styles.title}>
-          Nous vendons votre bien dans{' '}
+          Nous vendrons votre bien dans{' '}
           <span style={{color: '#DE6539'}}>les 30 prochains jours</span>, au{' '}
           <span style={{color: '#DE6539'}}>prix convenu.</span>
         </h2>

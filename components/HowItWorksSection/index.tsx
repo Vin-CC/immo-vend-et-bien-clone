@@ -97,6 +97,7 @@ export default function HowItWorksSection() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
+      <div className={styles.bgImage}></div>
       <div className={styles.overlay}></div>
       <div className={styles.inner}>
         <div className={styles.rightCol}>
