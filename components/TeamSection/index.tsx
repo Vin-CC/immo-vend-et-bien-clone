@@ -52,6 +52,24 @@ export default function TeamSection() {
           />
         </div>
 
+        {/* Social proof : avatars + texte */}
+        <div className={styles.socialProof}>
+          <div className={styles.avatars}>
+            {[
+              'https://www.immovendetbien.com/wp-content/uploads/2025/01/Amina-881x1024.jpeg',
+              'https://www.immovendetbien.com/wp-content/uploads/2024/07/VeroWEB.jpg',
+              'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png',
+              'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB22.png',
+              'https://www.immovendetbien.com/wp-content/uploads/2025/08/Maeve-4gg-12-768x1024.png',
+            ].map((src, i) => (
+              <img key={i} src={src} alt="" className={styles.avatar} />
+            ))}
+          </div>
+          <p className={styles.socialText}>
+            Déjà <strong>+200 personnes</strong> ont vendu leurs biens avec Vend&amp;Bien
+          </p>
+        </div>
+
         <a href="#header-form" className={styles.btn}>
           Je vérifie l&apos;éligibilité de mon bien
         </a>
