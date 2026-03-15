@@ -33,12 +33,6 @@ export default function GuaranteeSection() {
 
   return (
     <section className={styles.section}>
-      <img
-        src="https://www.immovendetbien.com/wp-content/uploads/2025/08/Maeve-4gg-12-768x1024.png"
-        alt=""
-        className={styles.decoLeft}
-        aria-hidden="true"
-      />
       <div className={styles.inner}>
         <h2 className={styles.title}>
           Bénéficiez de notre garantie vendeur à 30 jours, au meilleur prix
@@ -48,12 +42,6 @@ export default function GuaranteeSection() {
           Je vérifie l&apos;éligibilité de mon bien
         </a>
       </div>
-      <img
-        src="https://www.immovendetbien.com/wp-content/uploads/2024/05/Amina-12-768x1024.png"
-        alt=""
-        className={styles.decoRight}
-        aria-hidden="true"
-      />
     </section>
   );
 }
