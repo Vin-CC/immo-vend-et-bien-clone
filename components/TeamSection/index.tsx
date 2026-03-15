@@ -1,73 +1,62 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './TeamSection.module.css';
 
-const leftAgents = [
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB22.png', name: 'Alessia' },
+const agents = [
   { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/01/Amina-881x1024.jpeg', name: 'Amina' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png', name: 'Sebastien' },
-];
-
-const rightAgents = [
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2024/07/VeroWEB.jpg', name: 'Véronique' },
   { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB22.png', name: 'Alessia' },
-  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png', name: 'Sebastien' },
+  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2024/07/VeroWEB.jpg', name: 'Véronique' },
+  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png', name: 'Sébastien' },
+  { photo: 'https://www.immovendetbien.com/wp-content/uploads/2025/08/Maeve-4gg-12-768x1024.png', name: 'Maeve' },
 ];
-
-function AgentCard({ photo, name, delay = 0 }: { photo: string; name: string; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
-  return (
-    <div ref={ref} className={`${styles.agentCard} ${visible ? styles.visible : ''}`}>
-      <img src={photo} alt={name} className={styles.agentPhoto} />
-      <div className={styles.agentName}>{name}</div>
-    </div>
-  );
-}
 
 export default function TeamSection() {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    videoRef.current?.play();
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.agentCol}>
-          {leftAgents.map((agent, i) => (
-            <AgentCard key={agent.name + i} photo={agent.photo} name={agent.name} delay={i * 150} />
-          ))}
-        </div>
-
-        <div className={styles.centerCol}>
-          <img
-            src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
-            alt="Vend & Bien"
-            className={styles.centerLogo}
+        {/* Bouton découvrir / vidéo */}
+        <div className={styles.videoWrap} onClick={handlePlay}>
+          {!playing && (
+            <>
+              <img
+                src="https://www.immovendetbien.com/wp-content/uploads/2025/09/cover-pitch-new-VBdd.png"
+                alt="Découvrir Vend & Bien"
+                className={styles.cover}
+              />
+              <div className={styles.playOverlay}>
+                <div className={styles.playCircle}>
+                  <svg viewBox="0 0 24 24" fill="white" width="32" height="32">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+                <span className={styles.playLabel}>Cliquez pour découvrir</span>
+              </div>
+            </>
+          )}
+          <video
+            ref={videoRef}
+            src="https://www.immovendetbien.com/wp-content/uploads/2025/09/Pitch-Vend-Bien.mp4"
+            controls={playing}
+            className={`${styles.video} ${playing ? styles.active : ''}`}
           />
-          <p className={styles.centerText}>
-            Bien plus qu&apos;une agence, nous combinons <strong>expertise immobilière et innovation digitale</strong>, pour vous accompagner avec succès.
-          </p>
-          <a href="#header-form" className={styles.centerBtn}>
-            Je vérifie l&apos;éligibilité de mon bien
-          </a>
         </div>
 
-        <div className={styles.rightCol}>
-          {rightAgents.map((agent, i) => (
-            <AgentCard key={agent.name + i + 'right'} photo={agent.photo} name={agent.name} delay={i * 150} />
+        {/* Portraits ronds */}
+        <div className={styles.portraits}>
+          {agents.map((agent) => (
+            <div key={agent.name} className={styles.portrait}>
+              <img src={agent.photo} alt={agent.name} className={styles.portraitImg} />
+              <span className={styles.portraitName}>{agent.name}</span>
+            </div>
           ))}
         </div>
       </div>

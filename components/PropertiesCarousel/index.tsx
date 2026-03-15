@@ -44,6 +44,7 @@ export default function PropertiesCarousel() {
               0: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
               1025: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
             }}
           >
             {slides.map((slide, i) => (
