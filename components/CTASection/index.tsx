@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import styles from './CTASection.module.css';
 
 export default function CTASection() {
   const lottieRef = useRef<HTMLDivElement>(null);
@@ -32,28 +31,28 @@ export default function CTASection() {
   }, []);
 
   return (
-    <section className={styles.section}>
+    <section className="bg-white py-15 md:py-25 lg:py-50 relative overflow-x-clip text-center">
       <img
         src="https://www.immovendetbien.com/wp-content/uploads/2025/07/dd-889x1024.png"
         alt=""
-        className={styles.decoLeft}
+        className="hidden lg:block absolute left-0 bottom-0 h-3/4 max-h-145 z-1 object-contain object-[bottom_left]"
         aria-hidden="true"
       />
-      <div className={styles.inner}>
-        <h2 className={styles.title}>
+      <div className="max-w-[1140px] mx-auto px-5 relative z-2">
+        <h2 className="w-full md:w-[90%] mx-auto mb-4 font-[effra,Roboto,sans-serif] text-[20px] md:text-[25px] text-(--color-dark) leading-normal">
           Nous vendrons votre bien dans{' '}
-          <span style={{color: '#DE6539'}}>les 30 prochains jours</span>, au{' '}
-          <span style={{color: '#DE6539'}}>prix convenu.</span>
+          <span className="text-[#DE6539]">les 30 prochains jours</span>, au{' '}
+          <span className="text-[#DE6539]">prix convenu.</span>
         </h2>
-        <p className={styles.subtitle}>
+        <p className="font-[effra,Roboto,sans-serif] text-[20px] text-[var(--color-gray)] mb-10">
           Sinon, jusqu&apos;à <strong>100% des honoraires offerts</strong>.
         </p>
-        <div className={styles.lottieWrapper} ref={lottieRef}></div>
+        <div className="w-[300px] mx-auto mb-10" ref={lottieRef}></div>
       </div>
       <img
         src="https://www.immovendetbien.com/wp-content/uploads/2025/07/Sebastien-2dd-889x1024.png"
         alt=""
-        className={styles.decoRight}
+        className="hidden lg:block absolute right-0 bottom-0 h-3/4 max-h-145 z-1 object-contain object-[bottom_right]"
         aria-hidden="true"
       />
     </section>

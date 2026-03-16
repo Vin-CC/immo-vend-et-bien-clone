@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import styles from './EligibilitySection.module.css';
 
 export default function EligibilitySection() {
   useEffect(() => {
@@ -14,38 +13,38 @@ export default function EligibilitySection() {
   }, []);
 
   return (
-    <section className={styles.section} id="eligibilite">
-      <div className={styles.inner}>
-        <h2 className={styles.title}>
+    <section className="bg-white py-15 md:py-20 text-center" id="eligibilite">
+      <div className="max-w-285 mx-auto px-5">
+        <h2 className="font-[arista-pro,Roboto,sans-serif] text-[24px] md:text-[32px] text-(--color-dark) mb-12">
           Vérifiez en 1 clic si vous êtes éligible à notre garantie
         </h2>
-        <div className={styles.cards}>
+        <div className="flex flex-col md:flex-row gap-6 mb-12">
           <div
-            className={styles.card}
+            className="flex-1 min-h-70 md:min-h-100 relative rounded-lg overflow-hidden bg-cover bg-center flex flex-col items-center justify-center p-10 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.02]"
             style={{ backgroundImage: `url('https://www.immovendetbien.com/wp-content/uploads/2025/07/Maison-1024x788.jpg')` }}
           >
-            <div className={styles.cardOverlay}></div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>J&apos;ai une maison</h3>
-              <a href="#header-form" className={styles.cardBtn}>
+            <div className="absolute inset-0 bg-black/50 z-0"></div>
+            <div className="relative z-1 flex flex-col items-center gap-5">
+              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[32px] text-white m-0">J&apos;ai une maison</h3>
+              <a href="#header-form" className="bg-(--color-orange) text-white border-none px-6 py-3.5 font-[effra,Roboto,sans-serif] text-[15px] font-bold cursor-pointer rounded-sm no-underline inline-block transition-opacity duration-200 ease-in-out hover:opacity-90 hover:text-white hover:no-underline">
                 Je vérifie l&apos;éligibilité de mon bien
               </a>
             </div>
           </div>
           <div
-            className={styles.card}
+            className="flex-1 min-h-70 md:min-h-100 relative rounded-lg overflow-hidden bg-cover bg-center flex flex-col items-center justify-center p-10 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.02]"
             style={{ backgroundImage: `url('https://www.immovendetbien.com/wp-content/uploads/2024/05/francesca-tosolini-tHkJAMcO3QE-unsplash-1024x683.jpg')` }}
           >
-            <div className={styles.cardOverlay}></div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>J&apos;ai un appartement</h3>
-              <a href="#header-form" className={styles.cardBtn}>
+            <div className="absolute inset-0 bg-black/50 z-0"></div>
+            <div className="relative z-1 flex flex-col items-center gap-5">
+              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[32px] text-white m-0">J&apos;ai un appartement</h3>
+              <a href="#header-form" className="bg-(--color-orange) text-white border-none px-6 py-3.5 font-[effra,Roboto,sans-serif] text-[15px] font-bold cursor-pointer rounded-sm no-underline inline-block transition-opacity duration-200 ease-in-out hover:opacity-90 hover:text-white hover:no-underline">
                 Je vérifie l&apos;éligibilité de mon bien
               </a>
             </div>
           </div>
         </div>
-        <div className={styles.trustWidget} id="trustindex-eligibility"></div>
+        <div className="mt-6" id="trustindex-eligibility"></div>
       </div>
     </section>
   );

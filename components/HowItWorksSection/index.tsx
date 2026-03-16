@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import styles from './HowItWorksSection.module.css';
 
 const steps = [
   {
@@ -64,13 +63,25 @@ function LottieStep({ url, index }: { url: string; index: number }) {
     };
   }, [url]);
 
-  return <div ref={ref} className={styles.lottieStep}></div>;
+  return <div ref={ref} className="w-15 h-15 shrink-0"></div>;
 }
 
 function ArrowIcon({ visible }: { visible: boolean }) {
   return (
-    <div className={`${styles.arrowWrapper} ${visible ? styles.visible : ''}`}>
-      <svg className={styles.arrowSvg} viewBox="0 0 24 24" fill="none" stroke="#DE6539" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <div
+      className={`flex justify-center py-1 ${
+        visible ? 'animate-[fadeInDownArrow_0.6s_ease_forwards]' : 'opacity-0'
+      }`}
+    >
+      <svg
+        className="w-6 h-6 text-(--color-orange)"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#DE6539"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <polyline points="6 9 12 15 18 9" />
       </svg>
     </div>
@@ -96,25 +107,36 @@ export default function HowItWorksSection() {
   }, []);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section
+      className="relative min-h-150 py-15 md:py-25 bg-white overflow-hidden"
+      ref={sectionRef}
+    >
       <img
         src="https://www.immovendetbien.com/wp-content/uploads/2024/05/trouver_un_conceiller_1.jpg"
         alt=""
-        className={styles.bgImageEl}
+        className="absolute top-0 left-0 w-[45%] h-full object-cover object-center block"
         aria-hidden="true"
       />
-      <div className={styles.inner}>
-        <div className={styles.rightCol}>
-          <h2 className={styles.title}>Comment ça marche ?</h2>
-          <p className={styles.subtitle}>Tout est pensé pour Vendre &amp; Bien !</p>
-          <div className={styles.steps}>
+      <div className="relative z-1 max-w-285 mx-auto px-5 flex justify-center lg:justify-end">
+        <div className="w-full lg:w-[80%] xl:w-[55%] bg-white p-[28px_16px] md:p-12 rounded-lg">
+          <h2 className="font-['arista-pro','Roboto',sans-serif] text-[26px] md:text-[36px] text-(--color-dark) m-0 mb-2">
+            Comment ça marche ?
+          </h2>
+          <p className="font-['effra','Roboto',sans-serif] text-[20px] text-(--color-gray) mb-8">
+            Tout est pensé pour Vendre &amp; Bien !
+          </p>
+          <div className="flex flex-col gap-0.5">
             {steps.map((step, i) => (
               <div key={i}>
-                <div className={styles.step}>
+                <div className="bg-white p-[20px_24px] shadow-[0_2px_8px_rgba(0,0,0,0.06)] rounded-lg flex items-center gap-4">
                   <LottieStep url={step.lottie} index={i} />
-                  <div className={styles.stepContent}>
-                    <h3 className={styles.stepTitle}>{step.title}</h3>
-                    <p className={styles.stepText}>{step.text}</p>
+                  <div className="flex-1">
+                    <h3 className="font-['arista-pro','Roboto',sans-serif] text-[20px] text-(--color-dark) m-0 mb-1.5">
+                      {step.title}
+                    </h3>
+                    <p className="font-['effra','Roboto',sans-serif] text-[15px] text-(--color-gray) m-0">
+                      {step.text}
+                    </p>
                   </div>
                 </div>
                 {i < steps.length - 1 && <ArrowIcon visible={arrowsVisible} />}

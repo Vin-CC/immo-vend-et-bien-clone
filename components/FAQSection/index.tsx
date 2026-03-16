@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './FAQSection.module.css';
 
 const faqs = [
   {
@@ -34,21 +33,27 @@ export default function FAQSection() {
   };
 
   return (
-    <section className={styles.section}>
-      <div className={styles.inner}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Vous avez des questions ?</h2>
-          <p className={styles.subtitle}>Nous avons les réponses</p>
+    <section className="bg-(--color-orange) px-5 py-15 md:px-25 md:py-25">
+      <div className="max-w-285 mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-[arista-pro,Roboto,sans-serif] text-[26px] md:text-[36px] text-white mb-2">Vous avez des questions ?</h2>
+          <p className="font-[effra,Roboto,sans-serif] text-[20px] text-white/85 m-0">Nous avons les réponses</p>
         </div>
-        <div className={styles.list}>
+        <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
-            <div key={i} className={styles.item}>
-              <button className={styles.question} onClick={() => toggle(i)}>
+            <div key={i} className="bg-white rounded-lg overflow-hidden">
+              <button className="w-full text-left px-6 py-5 bg-transparent border-none cursor-pointer flex justify-between items-center gap-4 font-[effra,Roboto,sans-serif] text-[16px] md:text-[18px] text-(--color-dark) font-bold hover:bg-black/2" onClick={() => toggle(i)}>
                 <span>{faq.q}</span>
-                <span className={styles.icon}>{openIndex === i ? '−' : '+'}</span>
+                <span className="text-[24px] text-(--color-orange) font-bold shrink-0 leading-none">{openIndex === i ? '\u2212' : '+'}</span>
               </button>
-              <div className={`${styles.answer} ${openIndex === i ? styles.open : ''}`}>
-                <p className={styles.answerText}>{faq.a}</p>
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
+                style={{
+                  maxHeight: openIndex === i ? '500px' : '0',
+                  padding: openIndex === i ? '0 24px 20px' : '0 24px',
+                }}
+              >
+                <p className="font-[effra,Roboto,sans-serif] text-[16px] text-(--color-gray) leading-[1.6] m-0">{faq.a}</p>
               </div>
             </div>
           ))}

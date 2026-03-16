@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import styles from './StatsBar.module.css';
 
 interface StatItem {
   label: string;
@@ -42,11 +41,13 @@ function useCounter(target: number, started: boolean) {
 function StatCounter({ stat, started }: { stat: StatItem; started: boolean }) {
   const value = useCounter(stat.target, started);
   return (
-    <div className={styles.stat}>
-      <span className={styles.statValue}>
+    <div className="text-center flex-1 min-w-30 md:min-w-40">
+      <span className="font-[arista-pro,Roboto,sans-serif] text-[24px] md:text-[32px] text-(--color-dark) font-bold block leading-none uppercase">
         {value}{stat.suffix}
       </span>
-      <span className={styles.statLabel}>{stat.label}</span>
+      <span className="font-[effra,Roboto,sans-serif] text-[20px] md:text-[13px] text-(--color-orange) mt-1.5 block">
+        {stat.label}
+      </span>
     </div>
   );
 }
@@ -70,12 +71,12 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section className={styles.statsBar} ref={ref}>
-      <div className={styles.inner}>
+    <section className="relative z-10 -mt-10 md:-mt-20 px-5 bg-transparent" ref={ref}>
+      <div className="max-w-[1140px] mx-auto bg-white shadow-[0px_0px_20px_-4px_rgba(0,0,0,0.155)] px-4 py-6 md:px-5 md:py-9 flex justify-around items-center gap-4 md:gap-5 flex-wrap">
         {stats.map((stat, i) => (
           <>
             <StatCounter key={stat.label} stat={stat} started={started} />
-            {i < stats.length - 1 && <div key={`divider-${i}`} className={styles.divider}></div>}
+            {i < stats.length - 1 && <div key={`divider-${i}`} className="hidden md:block w-0.5 h-15 bg-black/10"></div>}
           </>
         ))}
       </div>
