@@ -34,10 +34,10 @@
   font-stretch: normal;
 }
 
-/* arista-pro — CDNFonts trial version (non-commercial) */
+/* arista-pro — self-hosted (Arista 2.0 by studio kmzero) */
 @font-face {
   font-family: 'arista-pro';
-  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Regular-trial.woff') format('woff');
+  src: url('/fonts/Arista2.0.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -45,7 +45,7 @@
 
 @font-face {
   font-family: 'arista-pro';
-  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Alternate-SemiBold-trial.woff') format('woff');
+  src: url('/fonts/Arista2.0.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
   font-weight: 600;
@@ -53,7 +53,7 @@
 
 @font-face {
   font-family: 'arista-pro';
-  src: url('https://fonts.cdnfonts.com/s/18220/Arista-Pro-Alternate-Bold-trial.woff') format('woff');
+  src: url('/fonts/Arista2.0.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
   font-weight: 700;
