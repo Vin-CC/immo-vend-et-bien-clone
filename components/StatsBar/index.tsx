@@ -15,11 +15,10 @@ const stats: StatItem[] = [
 ];
 
 function useCounter(target: number, started: boolean) {
-  const [value, setValue] = useState(target);
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
     if (!started) return;
-    setValue(0);
     let start = 0;
     const duration = 1500;
     const step = Math.ceil(target / (duration / 16));
@@ -42,10 +41,10 @@ function StatCounter({ stat, started }: { stat: StatItem; started: boolean }) {
   const value = useCounter(stat.target, started);
   return (
     <div className="text-center flex-1 min-w-30 md:min-w-40">
-      <span className="font-[arista-pro,Roboto,sans-serif] text-[24px] md:text-[32px] text-(--color-dark) font-bold block leading-none uppercase">
+      <span className="font-[arista-pro,Roboto,sans-serif] text-[32px] text-(--color-dark) block leading-none uppercase">
         {value}{stat.suffix}
       </span>
-      <span className="font-[effra,Roboto,sans-serif] text-[20px] md:text-[13px] text-(--color-orange) mt-1.5 block">
+      <span className="font-[effra,Roboto,sans-serif] text-[28px] font-bold text-(--color-orange) mt-1.5 block">
         {stat.label}
       </span>
     </div>
@@ -76,7 +75,12 @@ export default function StatsBar() {
         {stats.map((stat, i) => (
           <>
             <StatCounter key={stat.label} stat={stat} started={started} />
-            {i < stats.length - 1 && <div key={`divider-${i}`} className="hidden md:block w-0.5 h-15 bg-black/10"></div>}
+            {i < stats.length - 1 &&
+              <div
+                key={`divider-${i}`}
+                className="hidden md:block w-0.5 h-15 bg-black/10"
+              ></div>
+            }
           </>
         ))}
       </div>

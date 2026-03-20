@@ -40,7 +40,7 @@ export default function CTASection() {
       />
       <div className="max-w-[1140px] mx-auto px-5 relative z-2">
         <h2 className="w-full md:w-[90%] mx-auto mb-4 font-[effra,Roboto,sans-serif] text-[20px] md:text-[25px] text-(--color-dark) leading-normal">
-          Nous vendrons votre bien dans{' '}
+          Nous vendons votre bien dans{' '}
           <span className="text-[#DE6539]">les 30 prochains jours</span>, au{' '}
           <span className="text-[#DE6539]">prix convenu.</span>
         </h2>

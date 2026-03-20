@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import CTAButton from '@/components/CTAButton';
 
 export default function TestimonialsSection() {
   useEffect(() => {
@@ -22,15 +23,10 @@ export default function TestimonialsSection() {
           Nos clients t&eacute;moignent !
         </h2>
         <p className="font-[effra,Roboto,sans-serif] text-[17px] md:text-[20px] text-white mb-10">
-          98% de nos clients satisfaits nous recommandent &agrave; leurs proches
+          98% de nos clients satisfaits par nos conseillers, alors pourquoi pas vous ?
         </p>
         <div className="mb-10" id="trustindex-testimonials"></div>
-        <a
-          href="#header-form"
-          className="inline-block bg-white text-(--color-orange) border-2 border-white px-7 py-3.5 font-[effra,Roboto,sans-serif] text-base font-bold cursor-pointer rounded-sm no-underline transition-opacity duration-200 ease-in-out hover:opacity-90 hover:text-(--color-orange) hover:no-underline"
-        >
-          Je v&eacute;rifie l&apos;&eacute;ligibilit&eacute; de mon bien
-        </a>
+        <CTAButton variant="white">Je vérifie l&apos;éligibilité de mon bien</CTAButton>
       </div>
     </section>
   );

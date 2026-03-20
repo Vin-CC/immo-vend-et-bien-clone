@@ -2,7 +2,7 @@ export default function MethodSection() {
   return (
     <section className="bg-white py-20 md:py-25 relative z-5">
       <div className="max-w-285 mx-auto px-5">
-        <h2 className="font-[arista-pro,Roboto,sans-serif] text-[28px] md:text-[36px] font-medium text-(--color-dark) text-center mx-auto mb-7.5 mt-0">
+        <h2 className="font-[arista-pro,Roboto,sans-serif] text-[28px] md:text-[36px] font-bold text-(--color-dark) text-center mx-auto mb-7.5 mt-0">
           Notre m&eacute;thode pour une vente garantie
         </h2>
         <div className="flex flex-col">
@@ -12,7 +12,7 @@ export default function MethodSection() {
               <span className="bg-(--color-orange) text-white font-[effra,Roboto,sans-serif] text-[14px] font-semibold uppercase tracking-[1px] px-2.5 py-1.25 inline-block mb-5 self-start">
                 &Eacute;tape 1
               </span>
-              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-medium text-(--color-dark) mt-0 mb-5">
+              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-bold text-(--color-dark) mt-0 mb-5">
                 Estimation fiable
               </h3>
               <p className="font-[effra,Roboto,sans-serif] text-[16px] text-(--color-dark) leading-[1.6] mb-0">
@@ -43,7 +43,7 @@ export default function MethodSection() {
               <span className="bg-(--color-orange) text-white font-[effra,Roboto,sans-serif] text-[14px] font-semibold uppercase tracking-[1px] px-2.5 py-1.25 inline-block mb-5 self-start">
                 &Eacute;tape 2
               </span>
-              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-medium text-(--color-dark) mt-0 mb-5">
+              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-bold text-(--color-dark) mt-0 mb-5">
                 Strat&eacute;gie digitale optimale
               </h3>
               <p className="font-[effra,Roboto,sans-serif] text-[16px] text-(--color-dark) leading-[1.6] mb-0">
@@ -61,7 +61,7 @@ export default function MethodSection() {
               <span className="bg-(--color-orange) text-white font-[effra,Roboto,sans-serif] text-[14px] font-semibold uppercase tracking-[1px] px-2.5 py-1.25 inline-block mb-5 self-start">
                 &Eacute;tape 3
               </span>
-              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-medium text-(--color-dark) mt-0 mb-5">
+              <h3 className="font-[arista-pro,Roboto,sans-serif] text-[22px] md:text-[28px] font-bold text-(--color-dark) mt-0 mb-5">
                 Votre projet, notre priorit&eacute; absolue !
               </h3>
               <p className="font-[effra,Roboto,sans-serif] text-[16px] text-(--color-dark) leading-[1.6] mb-0">

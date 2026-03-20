@@ -19,8 +19,8 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <TeamSection />
       <StatsBar />
+      <TeamSection />
       <ComparisonSection />
       <GuaranteeSection />
       <MethodSection />

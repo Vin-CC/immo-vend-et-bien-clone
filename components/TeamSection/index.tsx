@@ -1,90 +1,107 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import CTAButton from '@/components/CTAButton';
+
+const leftMembers = [
+  { name: 'Alessia', src: '/images/VeroWEB22.png' },
+  { name: 'Amina', src: '/images/Amina-881x1024.jpeg' },
+];
+
+const rightMembers = [
+  { name: 'Véronique', src: '/images/VeroWEB.jpg' },
+  { name: 'Sébastien', src: '/images/VeroWEB33.png' },
+];
+
+function MemberCard({ name, src }: { name: string; src: string }) {
+  return (
+    <div className="relative animate-fadeInUp">
+      <img
+        src={src}
+        alt={name}
+        className="w-full h-[250px] object-cover object-top border-4 border-[#DE6539]"
+        loading="lazy"
+      />
+      <div className="absolute -bottom-5 left-1/2 -translate-x-1/2">
+        <div className="bg-[#DE6539] px-4 py-1.5 whitespace-nowrap">
+          <h2 className="font-[Roboto,sans-serif] text-[24px] font-semibold text-white text-center m-0 leading-tight">
+            {name}
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TeamSection() {
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = () => {
-    setPlaying(true);
-    videoRef.current?.play();
-  };
-
   return (
-    <section className="bg-white py-15 md:py-20 text-center">
-      <div className="max-w-[760px] mx-auto px-5 flex flex-col items-center gap-8">
-        {/* Logo + texte agence */}
-        <img
-          src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
-          alt="Vend & Bien"
-          className="max-w-[280px] h-auto"
-        />
-        <p className="font-[effra,Roboto,sans-serif] text-4 md:text-[18px] text-(--color-dark) leading-[1.6] max-w-140 m-0">
-          Bien plus qu&apos;une agence, nous combinons <strong>expertise immobilière et innovation digitale</strong>, pour vous accompagner avec succès.
-        </p>
-
-        {/* Vidéo / bouton découvrir */}
-        <div
-          className="relative w-full max-w-[640px] cursor-pointer rounded-[10px] overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.15)]"
-          onClick={!playing ? handlePlay : undefined}
-        >
-          {!playing && (
-            <>
-              <img
-                src="https://www.immovendetbien.com/wp-content/uploads/2025/09/cover-pitch-new-VBdd.png"
-                alt="Découvrir Vend & Bien"
-                className="w-full block"
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/18">
-                <div className="w-20 h-20 bg-(--color-orange) rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(222,101,57,0.5)] transition-transform duration-200 hover:scale-[1.08]">
-                  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
-                    <polygon points="5,3 19,12 5,21" />
-                  </svg>
-                </div>
-                <span className="font-[effra,Roboto,sans-serif] text-[13px] font-bold text-white uppercase tracking-[1.5px]">
-                  Cliquez pour découvrir
-                </span>
-              </div>
-            </>
-          )}
-          <video
-            ref={videoRef}
-            src="https://www.immovendetbien.com/wp-content/uploads/2025/09/Pitch-Vend-Bien.mp4"
-            controls={playing}
-            className={`w-full ${playing ? 'block' : 'hidden'}`}
-          />
-        </div>
-
-        {/* Social proof : avatars + texte */}
-        <div className="flex flex-col items-center gap-3">
-          <div className="flex">
-            {[
-              'https://www.immovendetbien.com/wp-content/uploads/2025/01/Amina-881x1024.jpeg',
-              'https://www.immovendetbien.com/wp-content/uploads/2024/07/VeroWEB.jpg',
-              'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB33.png',
-              'https://www.immovendetbien.com/wp-content/uploads/2025/09/VeroWEB22.png',
-              'https://www.immovendetbien.com/wp-content/uploads/2025/08/Maeve-4gg-12-768x1024.png',
-            ].map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                className={`w-12 h-12 rounded-full object-cover border-[3px] border-white shadow-[0_2px_8px_rgba(0,0,0,0.15)] ${i === 0 ? 'ml-0' : '-ml-3'}`}
-              />
+    <section className="py-16 md:py-24 relative overflow-visible -mt-20 mb-24">
+      {/* V watermark overlay — visible behind content */}
+      <div
+        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/images/favicon.png)',
+          backgroundSize: 'contain',
+          backgroundPosition: '50% 50%',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="max-w-[1440px] mx-auto px-5 relative z-[1]">
+        {/* Desktop layout: 3 columns */}
+        <div className="hidden lg:flex items-center justify-center gap-0">
+          {/* Left column: Alessia + Amina */}
+          <div className="flex flex-col gap-[150px] w-[260px] shrink-0">
+            {leftMembers.map((member) => (
+              <MemberCard key={member.name} {...member} />
             ))}
           </div>
-          <p className="font-[effra,Roboto,sans-serif] text-[15px] text-(--color-dark) m-0">
-            Déjà <strong>+200 personnes</strong> ont vendu leurs biens avec Vend&amp;Bien
-          </p>
+
+          {/* Center column: Logo + Text + CTA */}
+          <div className="flex flex-col items-center justify-center text-center gap-5 max-w-[530px] flex-1 py-[200px] px-8">
+            <img
+              src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
+              alt="Vend & Bien"
+              className="w-full max-w-[460px] h-auto"
+            />
+            <p className="font-[effra,Roboto,sans-serif] text-[25px] text-[#58595b] leading-[1.2] m-0">
+              Bien plus qu&apos;une agence, nous combinons{' '}
+              <strong className="text-(--color-orange)">expertise immobilière et innovation digitale</strong>,{' '}
+              pour vous accompagner avec succès.
+            </p>
+            <CTAButton>Je vérifie l&apos;éligibilité de mon bien</CTAButton>
+          </div>
+
+          {/* Right column: Véronique + Sébastien */}
+          <div className="flex flex-col gap-[150px] w-[275px] shrink-0">
+            {rightMembers.map((member) => (
+              <MemberCard key={member.name} {...member} />
+            ))}
+          </div>
         </div>
 
-        <a
-          href="#header-form"
-          className="bg-(--color-orange) text-white px-7 py-3.5 font-[effra,Roboto,sans-serif] text-4 font-bold rounded-sm no-underline inline-block transition-opacity duration-200 hover:opacity-90 hover:text-white hover:no-underline"
-        >
-          Je vérifie l&apos;éligibilité de mon bien
-        </a>
+        {/* Mobile layout: stacked */}
+        <div className="flex flex-col items-center gap-8 lg:hidden">
+          {/* Center content first on mobile */}
+          <div className="flex flex-col items-center text-center gap-5 max-w-[400px]">
+            <img
+              src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
+              alt="Vend & Bien"
+              className="w-full max-w-[300px] h-auto"
+            />
+            <p className="font-[effra,Roboto,sans-serif] text-[20px] text-[#58595b] leading-[1.2] m-0">
+              Bien plus qu&apos;une agence, nous combinons{' '}
+              <strong className="text-(--color-orange)">expertise immobilière et innovation digitale</strong>,{' '}
+              pour vous accompagner avec succès.
+            </p>
+            <CTAButton>Je vérifie l&apos;éligibilité de mon bien</CTAButton>
+          </div>
+
+          {/* Team members grid on mobile */}
+          <div className="grid grid-cols-2 gap-4 w-full max-w-[400px]">
+            {[...leftMembers, ...rightMembers].map((member) => (
+              <MemberCard key={member.name} {...member} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

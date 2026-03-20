@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import CTAButton from '@/components/CTAButton';
 
 export default function EligibilitySection() {
   useEffect(() => {
@@ -26,9 +27,7 @@ export default function EligibilitySection() {
             <div className="absolute inset-0 bg-black/50 z-0"></div>
             <div className="relative z-1 flex flex-col items-center gap-5">
               <h3 className="font-[arista-pro,Roboto,sans-serif] text-[32px] text-white m-0">J&apos;ai une maison</h3>
-              <a href="#header-form" className="bg-(--color-orange) text-white border-none px-6 py-3.5 font-[effra,Roboto,sans-serif] text-[15px] font-bold cursor-pointer rounded-sm no-underline inline-block transition-opacity duration-200 ease-in-out hover:opacity-90 hover:text-white hover:no-underline">
-                Je vérifie l&apos;éligibilité de mon bien
-              </a>
+              <CTAButton size="small">Je vérifie l&apos;éligibilité de mon bien</CTAButton>
             </div>
           </div>
           <div
@@ -38,9 +37,7 @@ export default function EligibilitySection() {
             <div className="absolute inset-0 bg-black/50 z-0"></div>
             <div className="relative z-1 flex flex-col items-center gap-5">
               <h3 className="font-[arista-pro,Roboto,sans-serif] text-[32px] text-white m-0">J&apos;ai un appartement</h3>
-              <a href="#header-form" className="bg-(--color-orange) text-white border-none px-6 py-3.5 font-[effra,Roboto,sans-serif] text-[15px] font-bold cursor-pointer rounded-sm no-underline inline-block transition-opacity duration-200 ease-in-out hover:opacity-90 hover:text-white hover:no-underline">
-                Je vérifie l&apos;éligibilité de mon bien
-              </a>
+              <CTAButton size="small">Je vérifie l&apos;éligibilité de mon bien</CTAButton>
             </div>
           </div>
         </div>
