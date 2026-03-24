@@ -1,0 +1,8 @@
+# Credentials serveurs - NE PAS COMMITTER
+# Remplis les informations ci-dessous pour chaque serveur
+
+# Mon Meilleur Bien (principal)
+MMB_HOST=212.227.88.30
+MMB_USER=root
+MMB_PASSWORD=6pHiKhxCAIcg
+MMB_PORT=22
