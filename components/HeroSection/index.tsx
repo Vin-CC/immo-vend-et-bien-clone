@@ -1,16 +1,19 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+
+const BASE_FORM_URL = 'https://api.leadconnectorhq.com/widget/form/s2V6VyjwDx9jjE7oQLrH';
+const PROPERTY_FIELD_NAME = 'confirmez-vous_que_vous_avez_:';
 
 export default function HeroSection() {
   const [playing, setPlaying] = useState(false);
+  const [formSrc, setFormSrc] = useState(BASE_FORM_URL);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
     setPlaying(true);
     videoRef.current?.play();
   };
-
 
   useEffect(() => {
     const ghlScript = document.createElement('script');
@@ -21,10 +24,30 @@ export default function HeroSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const type = (e as CustomEvent<string>).detail;
+      const newQuery = `?${PROPERTY_FIELD_NAME}=${encodeURIComponent(type)}`;
+      window.history.replaceState({}, '', window.location.pathname + newQuery);
+      setFormSrc(`${BASE_FORM_URL}${newQuery}`);
+    };
+    window.addEventListener('select-property-type', handler);
+    return () => window.removeEventListener('select-property-type', handler);
+  }, []);
+
+  const trustindexMobileRef = useCallback((node: HTMLDivElement | null) => {
+    if (!node || node.querySelector('script')) return;
+    const script = document.createElement('script');
+    script.src = 'https://cdn.trustindex.io/loader.js?ba912c75057c420761467bbcd77';
+    script.defer = true;
+    script.async = true;
+    node.appendChild(script);
+  }, []);
+
   return (
     <section
-      className="relative z-[1] min-h-[80vh] max-w-[min(100%, 1140px)] px-[200px] bg-cover bg-center 
-      pt-[120px] pb-[60px] md:pt-[180px] md:pb-[100px] overflow-hidden text-center
+      className="relative z-[1] min-h-screen md:min-h-[90vh] bg-cover bg-center
+      pt-25 pb-2.5 px-5 md:pt-37.5 md:pb-30 md:px-5 lg:pt-50 lg:pb-50 lg:px-50 overflow-hidden text-center
       before:bg-white/82 before:absolute before:inset-0 before:z-[-1] before:content-['']
       "
       style={{ backgroundImage: "url('https://www.immovendetbien.com/wp-content/uploads/2024/05/Vend-bien.jpg')" }}
@@ -32,24 +55,26 @@ export default function HeroSection() {
     >
       {/* min(100%, 1140px) */}
       <div className="relative z-[1] mx-auto flex flex-col items-center gap-4">
-        <div className="font-[effra,Roboto,sans-serif] text-[18px] md:text-[28px] uppercase bg-(--color-orange) text-white inline-block px-[18px] py-[6px] animate-fadeInDownSmall">
+        <div className="font-[effra,Roboto,sans-serif] text-[25px] md:text-[30px] lg:text-[35px] font-semibold uppercase bg-(--color-orange) text-white inline-block px-3.75 py-1.25 animate-fadeInDownSmall">
           Reims &amp; Épernay
         </div>
-        <h1 className="font-[arista-pro,Roboto,sans-serif] text-[30px] md:text-[48px] text-(--color-dark) m-0 leading-[1.2]">
-          Nous vendons votre bien<br />
-          <span className="text-(--color-orange)">en 30 jours</span> et <span className="text-(--color-orange)">au prix convenu</span>
+        <h1 className="font-[arista-pro,Roboto,sans-serif] text-[30px] md:text-[40px] lg:text-[48px] text-(--color-dark) m-0 leading-[1.2]">
+          Nous vendons votre bien<br className="hidden md:inline" />
+          {' '}<span className="text-(--color-orange)">en 30 jours</span> et <span className="text-(--color-orange)">au prix convenu</span>
         </h1>
-        <p className="font-[effra,Roboto,sans-serif] text-[16px] md:text-[20px] text-(--color-dark) m-0">
+        <p className="font-[effra,Roboto,sans-serif] text-[18px] md:text-[18px] lg:text-[20px] text-(--color-dark) m-0">
           Sinon jusqu&apos;à <strong>100% des honoraires offerts</strong>
         </p>
         <div className="w-full max-w-[900px] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden mt-2">
           <iframe
-            src="https://api.leadconnectorhq.com/widget/form/s2V6VyjwDx9jjE7oQLrH"
+            key={formSrc}
+            src={formSrc}
             data-height="1237"
             title="Formulaire de contact"
             className="w-full h-[1237px] border-none block"
           />
         </div>
+        <div ref={trustindexMobileRef} className="mt-4 md:hidden" />
       </div>
 
       {/* Vidéo / bouton découvrir */}

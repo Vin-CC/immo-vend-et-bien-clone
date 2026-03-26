@@ -16,13 +16,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-999 px-5 py-4 flex items-center justify-center md:px-10 md:py-5 md:justify-between">
+    <nav className="absolute top-0 left-0 w-full z-999 px-2.5 py-2.5 flex items-center justify-center md:px-2.5 md:py-2.5 lg:px-10 lg:py-2.5 md:justify-between">
       <div>
         <a href="#">
           <img
             src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
             alt="Vend & Bien"
-            className="max-w-55 md:max-w-87.5 w-full h-auto"
+            className="max-w-50 md:max-w-62.5 lg:max-w-87.5 w-full h-auto"
           />
         </a>
       </div>

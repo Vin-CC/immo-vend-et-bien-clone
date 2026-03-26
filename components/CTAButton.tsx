@@ -17,6 +17,7 @@ interface CTAButtonProps {
   href?: string;
   className?: string;
   children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export default function CTAButton({
@@ -25,10 +26,12 @@ export default function CTAButton({
   href = '#header-form',
   className = '',
   children,
+  onClick,
 }: CTAButtonProps) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
