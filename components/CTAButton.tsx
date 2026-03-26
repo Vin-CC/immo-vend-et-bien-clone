@@ -1,9 +1,9 @@
 const base = 'font-[effra,Roboto,sans-serif] font-semibold cursor-pointer rounded-none no-underline inline-block transition-colors duration-200';
 
 const variants = {
-  orange: 'bg-(--color-orange) text-white hover:bg-[#5D8D96] hover:text-white',
-  dark: 'bg-(--color-dark) text-white hover:bg-[#5D8D96] hover:text-white',
-  white: 'bg-white !text-(--color-orange) border-2 border-white hover:bg-[#5D8D96] hover:!text-white hover:border-[#5D8D96]',
+  orange: 'bg-(--color-orange) text-white! no-underline! hover:bg-[#5D8D96] hover:text-white',
+  dark: 'bg-(--color-dark) text-white! no-underline! hover:bg-[#5D8D96] hover:text-white',
+  white: 'bg-white !text-(--color-orange) no-underline! border-2 border-white hover:bg-[#5D8D96] hover:!text-white hover:border-[#5D8D96]',
 } as const;
 
 const sizes = {

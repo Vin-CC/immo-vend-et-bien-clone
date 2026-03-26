@@ -93,13 +93,12 @@ p {
 }
 
 a {
-  color: #fff;
+  color: var(--color-orange) !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: #fff;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .e-con-boxed {
