@@ -90,7 +90,26 @@ export default function AppointmentPicker({ onBack }: Props) {
     setStep('slots');
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
+    if (!selectedDate || !selectedSlot) return;
+
+    try {
+      // Récupérer les données du contact depuis sessionStorage
+      const raw = sessionStorage.getItem('contactData');
+      const contact = raw ? JSON.parse(raw) : {};
+
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...contact,
+          rdv_date: `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`,
+          rdv_heure: selectedSlot,
+          source: 'site-web-rdv',
+        }),
+      });
+    } catch { /* on affiche quand même la confirmation */ }
+
     setStep('done');
   };
 
