@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 const DAYS_FR = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
 const MONTHS_FR = [
@@ -152,9 +152,7 @@ export default function AppointmentPicker({ onBack }: Props) {
             onClick={prevMonth}
             className="w-10 h-10 rounded-full bg-(--color-orange)/5 flex items-center justify-center cursor-pointer border-none hover:text-black! transition-colors"
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-orange)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
+            <ChevronLeft size={16} className="text-(--color-orange)" />
           </button>
           <span className="text-lg font-semibold text-(--color-dark) min-w-40 text-center">
             {MONTHS_FR[viewMonth]} {viewYear}
@@ -164,9 +162,7 @@ export default function AppointmentPicker({ onBack }: Props) {
             onClick={nextMonth}
             className="w-10 h-10 rounded-full bg-(--color-orange)/5 flex items-center justify-center cursor-pointer border-none hover:text-black transition-colors"
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-orange)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 6 15 12 9 18" />
-            </svg>
+            <ChevronRight size={16} className="text-(--color-orange)" />
           </button>
         </div>
 
@@ -244,9 +240,7 @@ export default function AppointmentPicker({ onBack }: Props) {
   return (
     <div className="text-center py-10">
       <div className="w-16 h-16 mx-auto mb-4 bg-(--color-orange) rounded-full flex items-center justify-center">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
+        <Check size={32} className="text-white" strokeWidth={3} />
       </div>
       <p className="text-[18px] font-bold text-(--color-dark) mb-2">
         Rendez-vous confirmé !
