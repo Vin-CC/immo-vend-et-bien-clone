@@ -1,39 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-
-const BASE_FORM_URL = 'https://api.leadconnectorhq.com/widget/form/s2V6VyjwDx9jjE7oQLrH';
-const PROPERTY_FIELD_NAME = 'confirmez-vous_que_vous_avez_:';
+import { useRef, useState, useCallback } from 'react';
+import ContactForm from '@/components/ContactForm';
 
 export default function HeroSection() {
   const [playing, setPlaying] = useState(false);
-  const [formSrc, setFormSrc] = useState(BASE_FORM_URL);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
     setPlaying(true);
     videoRef.current?.play();
   };
-
-  useEffect(() => {
-    const ghlScript = document.createElement('script');
-    ghlScript.src = 'https://link.msgsndr.com/js/form_embed.js';
-    document.body.appendChild(ghlScript);
-    return () => {
-      if (document.body.contains(ghlScript)) document.body.removeChild(ghlScript);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const type = (e as CustomEvent<string>).detail;
-      const newQuery = `?${PROPERTY_FIELD_NAME}=${encodeURIComponent(type)}`;
-      window.history.replaceState({}, '', window.location.pathname + newQuery);
-      setFormSrc(`${BASE_FORM_URL}${newQuery}`);
-    };
-    window.addEventListener('select-property-type', handler);
-    return () => window.removeEventListener('select-property-type', handler);
-  }, []);
 
   const trustindexMobileRef = useCallback((node: HTMLDivElement | null) => {
     if (!node || node.querySelector('script')) return;
@@ -65,15 +42,7 @@ export default function HeroSection() {
         <p className="font-[effra,Roboto,sans-serif] text-[18px] md:text-[18px] lg:text-[20px] text-(--color-dark) m-0">
           Sinon jusqu&apos;à <strong>100% des honoraires offerts</strong>
         </p>
-        <div className="w-full max-w-[900px] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden mt-2">
-          <iframe
-            key={formSrc}
-            src={formSrc}
-            data-height="1237"
-            title="Formulaire de contact"
-            className="w-full h-[1237px] border-none block"
-          />
-        </div>
+        <ContactForm />
         <div ref={trustindexMobileRef} className="mt-4 md:hidden" />
       </div>
 
