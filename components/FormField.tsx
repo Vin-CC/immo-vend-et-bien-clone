@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { AddressSuggestion } from '@/hooks/useAddressAutocomplete';
 
 const COUNTRIES = [
   { code: 'FR', flag: '🇫🇷', dial: '+33' },
@@ -184,6 +185,76 @@ export function FormPhoneInput({
           className="flex-1 border-none outline-none bg-transparent font-[effra,Roboto,sans-serif] text-[16px] text-[#525252] placeholder:text-[#8c8c8c] p-0"
         />
       </div>
+    </div>
+  );
+}
+
+interface FormAddressInputProps {
+  id?: string;
+  name: string;
+  label: string;
+  required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  suggestions: AddressSuggestion[];
+  showSuggestions: boolean;
+  onSelectSuggestion: (suggestion: AddressSuggestion) => void;
+  onBlur?: () => void;
+  onFocus?: () => void;
+  placeholder?: string;
+  className?: string;
+}
+
+export function FormAddressInput({
+  id,
+  name,
+  label,
+  required,
+  value,
+  onChange,
+  suggestions,
+  showSuggestions,
+  onSelectSuggestion,
+  onBlur,
+  onFocus,
+  placeholder,
+  className = '',
+}: FormAddressInputProps) {
+  const fieldId = id || name;
+  return (
+    <div className={`relative ${className}`}>
+      <label htmlFor={fieldId} className={labelBase}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <input
+        id={fieldId}
+        name={name}
+        type="text"
+        required={required}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        placeholder={placeholder}
+        autoComplete="off"
+        className={inputBase}
+      />
+      {showSuggestions && suggestions.length > 0 && (
+        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto">
+          {suggestions.map((suggestion) => (
+            <button
+              key={suggestion.id}
+              type="button"
+              className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0 cursor-pointer"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => onSelectSuggestion(suggestion)}
+            >
+              <p className="font-medium text-gray-900 font-[effra,Roboto,sans-serif] text-[14px]">{suggestion.label}</p>
+              <p className="text-xs text-gray-500 font-[effra,Roboto,sans-serif]">{suggestion.context}</p>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

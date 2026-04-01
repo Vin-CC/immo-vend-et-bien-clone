@@ -36,6 +36,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         typeDeBien: body.typeDeBien || '',
         ville: body.ville,
+        codePostal: body.codePostal || '',
         delaiVente: body.delaiVente || '',
         nom: body.nom,
         email: body.email,

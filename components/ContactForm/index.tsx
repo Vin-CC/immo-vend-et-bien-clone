@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import CTAButton from '@/components/CTAButton';
-import { FormInput, FormSelect, FormPhoneInput } from '@/components/FormField';
+import { FormInput, FormSelect, FormPhoneInput, FormAddressInput } from '@/components/FormField';
+import { useAddressAutocomplete, type AddressSuggestion } from '@/hooks/useAddressAutocomplete';
 
 const PROPERTY_TYPES = ['Une maison', 'Un appartement', 'Un Immeuble', 'Un terrain', 'Autre'] as const;
 const SALE_TIMELINES = ['Au plus vite', 'Dans les 3 mois', 'Plus tard', 'Je ne souhaite pas vendre'] as const;
@@ -11,6 +12,7 @@ const SALE_TIMELINES = ['Au plus vite', 'Dans les 3 mois', 'Plus tard', 'Je ne s
 interface FormData {
   typeDeBien: string;
   ville: string;
+  codePostal: string;
   delaiVente: string;
   nom: string;
   email: string;
@@ -39,6 +41,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     typeDeBien: '',
     ville: '',
+    codePostal: '',
     delaiVente: '',
     nom: '',
     email: '',
@@ -76,6 +79,29 @@ export default function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const {
+    address: villeInput,
+    suggestions,
+    showSuggestions,
+    setShowSuggestions,
+    handleAddressChange,
+    handleSelectAddress,
+  } = useAddressAutocomplete();
+
+  const onAddressInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleAddressChange(e);
+    setFormData((prev) => ({ ...prev, ville: '', codePostal: '' }));
+  };
+
+  const onSelectSuggestion = (suggestion: AddressSuggestion) => {
+    handleSelectAddress(suggestion);
+    setFormData((prev) => ({
+      ...prev,
+      ville: suggestion.city,
+      codePostal: suggestion.postcode,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -125,13 +151,19 @@ export default function ContactForm() {
         className="mb-6"
       />
 
-      {/* Toujours visible : Ville */}
-      <FormInput
+      {/* Toujours visible : Ville (autocomplete) */}
+      <FormAddressInput
         name="ville"
-        label="La ville où se situe votre bien ?"
+        label="L'adresse où se situe votre bien ?"
         required
-        value={formData.ville}
-        onChange={handleChange}
+        value={villeInput}
+        onChange={onAddressInputChange}
+        suggestions={suggestions}
+        showSuggestions={showSuggestions}
+        onSelectSuggestion={onSelectSuggestion}
+        onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+        onFocus={() => { if (villeInput.length >= 3) setShowSuggestions(true); }}
+        placeholder="Tapez l'adresse du bien..."
         className="mb-6"
       />
 
