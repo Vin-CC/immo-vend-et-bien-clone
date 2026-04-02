@@ -49,11 +49,18 @@ function TimezoneInfo() {
   );
 }
 
-interface Props {
-  onBack: () => void;
+interface ContactData {
+  nom: string;
+  telephone: string;
+  email: string;
 }
 
-export default function AppointmentPicker({ onBack }: Props) {
+interface Props {
+  onBack: () => void;
+  contactData: ContactData;
+}
+
+export default function AppointmentPicker({ onBack, contactData }: Props) {
   const today = new Date();
   const [viewMonth, setViewMonth] = useState(today.getMonth());
   const [viewYear, setViewYear] = useState(today.getFullYear());
@@ -94,19 +101,15 @@ export default function AppointmentPicker({ onBack }: Props) {
     if (!selectedDate || !selectedSlot) return;
 
     try {
-      // Récupérer les données du contact depuis sessionStorage
-      const raw = sessionStorage.getItem('contactData');
-      const contact = raw ? JSON.parse(raw) : {};
-
-      await fetch('/api/contact', {
+      const body = {
+        ...contactData,
+        rdv_date: `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`,
+        rdv_heure: selectedSlot,
+      }
+      await fetch('/api/rdv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...contact,
-          rdv_date: `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`,
-          rdv_heure: selectedSlot,
-          source: 'site-web-rdv',
-        }),
+        body: JSON.stringify(body),
       });
     } catch { /* on affiche quand même la confirmation */ }
 

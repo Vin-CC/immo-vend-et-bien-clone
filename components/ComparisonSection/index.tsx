@@ -7,7 +7,7 @@ export default function ComparisonSection() {
         </h2>
       </div>
       <section className="bg-(--color-teal) px-5 py-10 md:px-10 md:py-12.5 lg:px-25 lg:py-12.5">
-        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row gap-6 md:gap-7.5 items-stretch">
+        <div className="max-w-250 mx-auto flex flex-col md:flex-row gap-6 md:gap-7.5 items-stretch">
           {/* Colonne Vente Traditionnelle */}
           <div className="flex flex-col justify-center">
             <div className="p-[28px_20px] md:p-10 rounded-lg bg-(--color-gray)">

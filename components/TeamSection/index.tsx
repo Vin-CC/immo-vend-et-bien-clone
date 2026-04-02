@@ -18,7 +18,7 @@ function MemberCard({ name, src }: { name: string; src: string }) {
       <img
         src={src}
         alt={name}
-        className="w-full h-[250px] object-cover object-top border-4 border-[#DE6539]"
+        className="w-full h-62.5 object-cover object-top border-4 border-[#DE6539]"
         loading="lazy"
       />
       <div className="absolute -bottom-5 left-1/2 -translate-x-1/2">
@@ -45,22 +45,22 @@ export default function TeamSection() {
           backgroundRepeat: 'no-repeat',
         }}
       />
-      <div className="max-w-[1440px] mx-auto px-5 relative z-[1]">
+      <div className="max-w-360 mx-auto px-5 relative z-1">
         {/* Desktop layout: 3 columns */}
         <div className="hidden lg:flex items-center justify-center gap-0">
           {/* Left column: Alessia + Amina */}
-          <div className="flex flex-col gap-[150px] w-[260px] shrink-0">
+          <div className="flex flex-col gap-37.5 w-65 shrink-0">
             {leftMembers.map((member) => (
               <MemberCard key={member.name} {...member} />
             ))}
           </div>
 
           {/* Center column: Logo + Text + CTA */}
-          <div className="flex flex-col items-center justify-center text-center gap-5 max-w-[530px] flex-1 py-[200px] px-8">
+          <div className="flex flex-col items-center justify-center text-center gap-5 max-w-132.5 flex-1 py-50 px-8">
             <img
               src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
               alt="Vend & Bien"
-              className="w-full max-w-[460px] h-auto"
+              className="w-full max-w-115 h-auto"
             />
             <p className="font-[effra,Roboto,sans-serif] text-[25px] text-[#58595b] leading-[1.2] m-0">
               Bien plus qu&apos;une agence, nous combinons{' '}
@@ -71,7 +71,7 @@ export default function TeamSection() {
           </div>
 
           {/* Right column: Véronique + Sébastien */}
-          <div className="flex flex-col gap-[150px] w-[275px] shrink-0">
+          <div className="flex flex-col gap-37.5 w-68.75 shrink-0">
             {rightMembers.map((member) => (
               <MemberCard key={member.name} {...member} />
             ))}
@@ -81,11 +81,11 @@ export default function TeamSection() {
         {/* Mobile layout: stacked */}
         <div className="flex flex-col items-center gap-8 lg:hidden">
           {/* Center content first on mobile */}
-          <div className="flex flex-col items-center text-center gap-5 max-w-[400px]">
+          <div className="flex flex-col items-center text-center gap-5 max-w-100">
             <img
               src="https://www.immovendetbien.com/wp-content/uploads/2024/07/logo-VendEtBien-horizontal-01-QUADRI-CMJN-ByLevel51222-1-e1753092930888.png"
               alt="Vend & Bien"
-              className="w-full max-w-[300px] h-auto"
+              className="w-full max-w-75 h-auto"
             />
             <p className="font-[effra,Roboto,sans-serif] text-[20px] text-[#58595b] leading-[1.2] m-0">
               Bien plus qu&apos;une agence, nous combinons{' '}
@@ -96,7 +96,7 @@ export default function TeamSection() {
           </div>
 
           {/* Team members grid on mobile */}
-          <div className="grid grid-cols-2 gap-4 w-full max-w-[400px]">
+          <div className="grid grid-cols-2 gap-4 w-full max-w-100">
             {[...leftMembers, ...rightMembers].map((member) => (
               <MemberCard key={member.name} {...member} />
             ))}

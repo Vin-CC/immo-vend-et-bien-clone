@@ -110,7 +110,7 @@ function LottieAnimation({ url }: { url: string }) {
     };
   }, [url]);
 
-  return <div ref={ref} className="w-[50px] h-[50px] shrink-0" />;
+  return <div ref={ref} className="w-12.5 h-12.5 shrink-0" />;
 }
 
 function StepCard({ step }: { step: Step }) {
@@ -137,7 +137,7 @@ export default function HowItWorksSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[600px] overflow-visible"
+      className="relative min-h-150 overflow-visible"
       style={{
         backgroundImage: 'url(https://www.immovendetbien.com/wp-content/uploads/2024/05/trouver_un_conceiller_1.jpg)',
         backgroundSize: 'cover',
@@ -152,9 +152,9 @@ export default function HowItWorksSection() {
         }}
       />
 
-      <div className="relative z-[1] max-w-[1140px] mx-auto px-5 py-[100px] flex items-center justify-center lg:justify-start">
+      <div className="relative z-1 max-w-285 mx-auto px-5 py-25 flex items-center justify-center lg:justify-start">
         {/* Single column — 500px wide, gap 10px, all content stacked */}
-        <div className="w-full lg:w-[501px] flex flex-col gap-2.5 justify-center">
+        <div className="w-full lg:w-125.25 flex flex-col gap-2.5 justify-center">
           {/* Heading — outside cards */}
           <h2 className="font-[arista-pro,Roboto,sans-serif] text-[26px] md:text-[36px] text-(--color-dark) m-0">
             Comment ça marche ?

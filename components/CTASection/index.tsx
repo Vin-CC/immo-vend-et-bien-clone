@@ -38,7 +38,7 @@ export default function CTASection() {
         className="hidden lg:block absolute left-0 bottom-0 h-3/4 max-h-145 z-1 object-contain object-[bottom_left]"
         aria-hidden="true"
       />
-      <div className="max-w-[1140px] mx-auto px-5 relative z-2">
+      <div className="max-w-285 mx-auto px-5 relative z-2">
         <h2 className="w-full md:w-[90%] mx-auto mb-4 font-[effra,Roboto,sans-serif] text-[20px] md:text-[25px] text-(--color-dark) leading-normal">
           Nous vendons votre bien dans{' '}
           <span className="text-[#DE6539]">les 30 prochains jours</span>, au{' '}

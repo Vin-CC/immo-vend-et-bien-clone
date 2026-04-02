@@ -164,6 +164,7 @@ export default function ConfirmationPage() {
               ) : (
                 <AppointmentPicker
                   onBack={() => setConfirmed(false)}
+                  contactData={data}
                 />
               )}
             </div>

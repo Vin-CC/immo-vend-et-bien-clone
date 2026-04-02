@@ -71,7 +71,7 @@ export default function StatsBar() {
 
   return (
     <section className="relative z-10 -mt-10 md:-mt-20 px-5 bg-transparent" ref={ref}>
-      <div className="max-w-[1140px] mx-auto bg-white shadow-[0px_0px_20px_-4px_rgba(0,0,0,0.155)] px-4 py-6 md:px-5 md:py-9 flex justify-around items-center gap-4 md:gap-5 flex-wrap">
+      <div className="max-w-285 mx-auto bg-white shadow-[0px_0px_20px_-4px_rgba(0,0,0,0.155)] px-4 py-6 md:px-5 md:py-9 flex justify-around items-center gap-4 md:gap-5 flex-wrap">
         {stats.map((stat, i) => (
           <>
             <StatCounter key={stat.label} stat={stat} started={started} />

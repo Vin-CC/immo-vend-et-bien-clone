@@ -139,7 +139,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-[900px] border-3 border-(--color-orange) rounded-xl bg-white p-8 md:p-10 text-left mt-2"
+      className="w-full max-w-225 border-3 border-(--color-orange) rounded-xl bg-white p-8 md:p-10 text-left mt-2"
     >
       {/* Toujours visible : Type de bien */}
       <FormSelect

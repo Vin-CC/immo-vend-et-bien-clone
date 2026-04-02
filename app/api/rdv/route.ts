@@ -4,14 +4,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Honeypot anti-spam
-    if (body.website) {
-      return NextResponse.json({ success: true });
-    }
-
     // Validation des champs requis
-    const { nom, email, telephone, ville } = body;
-    if (!nom || !email || !telephone || !ville) {
+    const { nom, email, telephone, rdv_date, rdv_heure } = body;
+    if (!nom || !email || !telephone || !rdv_date || !rdv_heure) {
       return NextResponse.json(
         { error: 'Veuillez remplir tous les champs obligatoires.' },
         { status: 400 },
@@ -31,21 +26,14 @@ export async function POST(request: NextRequest) {
     const timeout = setTimeout(() => controller.abort(), 5000);
 
     const content = {
-      typeDeBien: body.typeDeBien || '',
-      ville: body.ville,
-      codePostal: body.codePostal || '',
-      delaiVente: body.delaiVente || '',
       nom: body.nom,
       email: body.email,
       telephone: body.telephone,
-      utm_source: body.utm_source || '',
-      utm_medium: body.utm_medium || '',
-      utm_campaign: body.utm_campaign || '',
-      utm_term: body.utm_term || '',
-      utm_content: body.utm_content || '',
-      source: 'site-web',
+      rdv_date: body.rdv_date,
+      rdv_heure: body.rdv_heure,
+      source: 'site-web-rdv',
       timestamp: new Date().toISOString(),
-    }
+    };
 
     const response = await fetch(hookUrl, {
       method: 'POST',
@@ -73,7 +61,7 @@ export async function POST(request: NextRequest) {
         { status: 504 },
       );
     }
-    console.error('Erreur API contact:', error);
+    console.error('Erreur API rdv:', error);
     return NextResponse.json(
       { error: 'Une erreur est survenue. Veuillez réessayer.' },
       { status: 500 },

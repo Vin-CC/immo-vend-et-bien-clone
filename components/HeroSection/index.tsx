@@ -23,7 +23,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative z-[1] min-h-screen md:min-h-[90vh] bg-cover bg-center
+      className="relative z-1 min-h-screen md:min-h-[90vh] bg-cover bg-center
       pt-25 pb-2.5 px-5 md:pt-37.5 md:pb-30 md:px-5 lg:pt-50 lg:pb-50 lg:px-50 overflow-hidden text-center
       before:bg-white/82 before:absolute before:inset-0 before:z-[-1] before:content-['']
       "
@@ -31,7 +31,7 @@ export default function HeroSection() {
       id="header-form"
     >
       {/* min(100%, 1140px) */}
-      <div className="relative z-[1] mx-auto flex flex-col items-center gap-4">
+      <div className="relative z-1 mx-auto flex flex-col items-center gap-4">
         <div className="font-[effra,Roboto,sans-serif] text-[25px] md:text-[30px] lg:text-[35px] font-semibold uppercase bg-(--color-orange) text-white inline-block px-3.75 py-1.25 animate-fadeInDownSmall">
           Reims &amp; Épernay
         </div>
